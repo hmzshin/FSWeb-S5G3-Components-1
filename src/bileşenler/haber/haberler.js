@@ -88,8 +88,64 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`,
   },
+  {
+    baslik: "My name is Hamza",
+    tarih: "20 Nisan 2000",
+    ilkParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si `,
+
+    ikinciParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si `,
+
+    ucuncuParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si`,
+  },
 ];
 
+function haberYapici(dizi) {
+  const haberDiv = document.createElement("div");
+  haberDiv.className = "article";
+
+  const h2 = document.createElement("h2");
+  h2.className = "baslik";
+  h2.textContent = dizi.baslik;
+
+  const tarih = document.createElement("p");
+  tarih.classList.add("tarih");
+  tarih.textContent = dizi.tarih;
+
+  const contentP1 = document.createElement("p");
+  contentP1.className = "paragraf";
+  contentP1.textContent = dizi.ilkParagraf;
+
+  const contentP2 = document.createElement("p");
+  contentP2.className = "paragraf";
+  contentP2.textContent = dizi.ikinciParagraf;
+
+  const contentP3 = document.createElement("p");
+  contentP3.className = "paragraf";
+  contentP3.textContent = dizi.ucuncuParagraf;
+
+  const expandButton = document.createElement("button");
+  expandButton.classList.add("expandButton");
+  expandButton.textContent = "+";
+
+  haberDiv.append(h2);
+  haberDiv.append(tarih);
+  haberDiv.append(contentP1);
+  haberDiv.append(contentP2);
+  haberDiv.append(contentP3);
+  haberDiv.append(expandButton);
+
+  expandButton.addEventListener("click", () => {
+    haberDiv.classList.toggle("article-open");
+  });
+
+  return haberDiv;
+}
+
+data.forEach((haber) => {
+  const haberDiv = haberYapici(haber);
+  const articlesDiv = document.querySelector(".articles");
+  articlesDiv.append(haberDiv);
+});
 /*
   Adım 1: Haber oluşturmak için 'haberYapici' adında bir bileşen(component) oluşturun.
   Bileşeniniz, argümanı haberleri içeren dizi olarak alan bir fonksiyon olacak,
