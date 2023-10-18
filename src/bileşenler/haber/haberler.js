@@ -97,6 +97,15 @@ const data = [
 
     ucuncuParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si`,
   },
+  {
+    baslik: "My name is Hamza Şahin",
+    tarih: "20 Nisan 2000",
+    ilkParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si `,
+
+    ikinciParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si `,
+
+    ucuncuParagraf: `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si`,
+  },
 ];
 
 function haberYapici(dizi) {
